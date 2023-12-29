@@ -14,8 +14,11 @@ By different combinations I can heat from 1.8kW up to 6 (5.4?) kW.
 
 I use a Wemos D1 NodeMCU with solid state relays in my boiler room to switch the 3 phases and Neutral, by listening to MQTT commands. Electrical diagram:
 ![image](https://github.com/EdwinGH/ElectricalHeater/assets/36776350/3d9c1fcd-5ede-4691-8109-d2c88f1f8925)
+The Arduino script for the NodeMCU is [Here](/Solar_Boiler_Heater_NodeMCU_Smart_3-phase_switcher_manual.ino)
+It supports OTA, USB as well as WebSerial debugging. And talks MQTT of course!  
 
 ## Server script
+The Python script [heater_steering.py](heater_steering.py) runs on a central server with databases with all kiinds of information. With this information the script will steer the relays via MQTT.
 
 ### Config file
 The heater_steering.py script reads the config file heater_steering_config.txt for the DB data; example file:
